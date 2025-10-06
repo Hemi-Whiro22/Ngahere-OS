@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from matanga.kotare.kotare import Kotare
+from kaitiaki.kotare.kotare import Kotare
 
 router = APIRouter()
 kotare = Kotare()

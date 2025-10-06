@@ -23,7 +23,7 @@ from routes.kaka_router import router as kaka_router
 from routes.kotare_router import router as kotare_router
 from routes.karearea_router import router as karearea_router
 from routes.tui_router import router as tui_router
-from routes.ngahere_router import router as ngahere_router
+from routes.kereru_router import router as kereru_router
 
 app = FastAPI(title="Ngahere-OS - Living Forest of Kaitiaki", version="0.1.0")
 
@@ -34,7 +34,7 @@ app.include_router(kaka_router, prefix="/kaka", tags=["Kaka - Carver"])
 app.include_router(kotare_router, prefix="/kotare", tags=["Kotare - Embeds"])
 app.include_router(karearea_router, prefix="/karearea", tags=["Karearea - OCR"])
 app.include_router(tui_router, prefix="/tui", tags=["Tui - Voice"])
-app.include_router(ngahere_router, prefix="/ngahere", tags=["Ngahere - Audit"])
+app.include_router(kereru_router, prefix="/kereru", tags=["Kererū - Gentle Audit"])
 
 @app.get("/")
 async def root():
