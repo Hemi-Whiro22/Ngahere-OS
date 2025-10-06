@@ -1,13 +1,19 @@
-import requests
-import json
+import sys
+import os
+from pathlib import Path
+
+# Add parent directory to path to import cloud_kaitiaki
+sys.path.append(str(Path(__file__).parent.parent))
+from cloud_kaitiaki import CloudKaitiaki, AIProvider
 
 class Kaka:
     def __init__(self):
         self.name = "Kaka"
-        self.ollama_url = "http://localhost:11434"
+        self.cloud_kaitiaki = CloudKaitiaki()
+        self.preferred_model = os.getenv("KAKA_PREFERRED_MODEL", "gpt-4")  # Default to GPT-4, fallback to Ollama
 
-    def carve(self, target: str, context: str = "") -> str:
-        """Kākā carves code using Ollama"""
+    def carve(self, target: str, context: str = "", model: str = None) -> str:
+        """Kākā carves code using Cloud Kaitiaki with automatic fallback"""
         try:
             # Create a prompt for code generation
             prompt = f"""You are Kaka, the code carver from the ngahere. Generate clean, working code for: {target}
@@ -20,28 +26,40 @@ Requirements:
 - Make it production-ready
 - Use best practices
 - Be helpful and clear
+- Follow the spirit of kaitiakitanga (guardianship) in your code
 
 Code:"""
 
-            # Call Ollama
-            response = requests.post(f"{self.ollama_url}/api/generate", 
-                json={
-                    "model": "llama3",
-                    "prompt": prompt,
-                    "stream": False,
-                    "options": {
-                        "temperature": 0.7,
-                        "num_predict": 400
-                    }
-                },
-                timeout=120
-            )
+            # Use specified model or preferred model
+            model_to_use = model or self.preferred_model
             
-            if response.status_code == 200:
-                result = response.json()
-                return result.get('response', 'No response from Ollama')
-            else:
-                return f"Kaka tried to carve but Ollama said: {response.text}"
+            # Generate using Cloud Kaitiaki with fallback
+            result = self.cloud_kaitiaki.generate_with_fallback(prompt, model_to_use)
+            
+            return f"🪶 Kākā carved with {model_to_use}:\n\n{result}"
                 
         except Exception as e:
-            return f"Kaka couldn't carve (Ollama error): {str(e)}"
+            return f"Kākā couldn't carve (Cloud Kaitiaki error): {str(e)}"
+    
+    def get_available_models(self) -> list:
+        """Get list of available models for carving"""
+        return self.cloud_kaitiaki.get_available_models()
+    
+    def switch_model(self, model: str) -> bool:
+        """Switch to a specific model"""
+        available_models = self.get_available_models()
+        if model in available_models:
+            self.preferred_model = model
+            return True
+        return False
+    
+    def get_status(self) -> dict:
+        """Get Kākā's status and available models"""
+        return {
+            "kaitiaki": self.name,
+            "status": "ready",
+            "capabilities": ["carve", "code_generation", "model_switching", "cloud_fallback"],
+            "preferred_model": self.preferred_model,
+            "available_models": self.get_available_models(),
+            "cloud_kaitiaki_status": self.cloud_kaitiaki.get_status()
+        }
