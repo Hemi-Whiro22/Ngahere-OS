@@ -1,0 +1,10 @@
+# backend/mauri/config.yaml
+app:
+  name: Ngahere-OS
+  backend_port: 8000
+  cultural_mode: true
+
+supabase:
+  summaries_table: summaries
+  embeddings_table: document_embeddings
+  vector_size: 1536

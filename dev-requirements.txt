@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+requests
+PyYAML
+supabase
+pillow
+pytesseract
+openai   # if you still want GPT cloud option
+langchain
+langchain-community
+langchain-openai   # if mixing GPT
+black
+pytest
+httpx

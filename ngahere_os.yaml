@@ -1,0 +1,65 @@
+id: ngahere_stack
+description: "Ngahere-OS — the living forest of kaitiaki guardians sustained by Tāne Mahuta and the rito."
+
+roles:
+  - id: kea
+    name: "Kea"
+    role: "Searcher"
+    purpose: "Fly into archives and databases (LINZ, Māori Land Court, Papers Past) to fetch results."
+    output: "JSON shaped by search prompts"
+    notes: "Curious, mischievous, always finding hidden things."
+
+  - id: ruru
+    name: "Ruru"
+    role: "Summariser"
+    purpose: "Take JSON results and return summaries (short, medium, long) with whakapapa context."
+    output: "Human-readable summaries"
+    notes: "Wise, quiet, brings clarity in the night."
+
+  - id: kotare
+    name: "Kōtare"
+    role: "Embedder"
+    purpose: "Embed summaries into vectors for memory search and recall."
+    output: "Vector embeddings stored in Supabase"
+    notes: "Sharp-eyed, dives deep, stores insight for recall."
+
+  - id: kaka
+    name: "Kākā"
+    role: "Carver"
+    purpose: "Chip away at the repo like bark on rākau, carving functions and shaping structure."
+    output: "Working code and carved systems"
+    notes: "Clever, loud, persistent — always stripping back the layers."
+
+  - id: karearea
+    name: "Kārearea"
+    role: "Scanner"
+    purpose: "Use keen eyesight to scan PDFs and images, extract raw and clean text."
+    output: "OCR text (raw + cleaned), page by page"
+    notes: "Fast and precise — a guardian that sees everything and misses nothing."
+
+  - id: tui
+    name: "Tūī"
+    role: "Voice"
+    purpose: "Transform text into spoken word, carrying the reo of the manu back to the people."
+    output: "Audio streams, spoken responses"
+    notes: "Melodic calls and mimicry — Tūī gives the ngahere its song."
+
+  - id: ngahere
+    name: "Ngahere"
+    role: "Auditor"
+    purpose: "Log all results, queries, and actions with provenance."
+    output: "Audit JSON (query, timestamp, source, mana)"
+    notes: "The forest itself, holding the story of every manu and hau."
+
+anchor:
+  tane_mahuta:
+    name: "Tāne Mahuta"
+    role: "Trunk and atua of the forest"
+    purpose: "Holds together all manu and connects them through the branches of knowledge."
+    notes: "Connects te rangi, te whenua, te awa — atua of the ngahere."
+
+  rito:
+    name: "Rito Te Ngahere"
+    role: "Heart of the forest (korito)"
+    purpose: "Hold mauri — environment, keys, clients, assets, the sustaining core of Ngahere-OS."
+    notes: "Like the korito of the ponga — nutrient heart where new fronds spiral out."

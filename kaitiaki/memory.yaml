@@ -1,0 +1,57 @@
+id: ngahere_stack
+description: "Mauri of the Ngahere-OS kaitiaki ecosystem."
+roles:
+  - id: kea_search
+    name: "Kea"
+    role: "Searcher of archives and databases"
+    purpose: "Fly into sites like LINZ Gazetteer, Māori Land Court, Papers Past to fetch results."
+    output: "JSON shaped by search prompts"
+    notes: "Curious, mischievous, always finding hidden things."
+
+  - id: ruru_summarise
+    name: "Ruru"
+    role: "Summariser of knowledge"
+    purpose: "Take JSON results and return summaries (short, medium, long) with whakapapa context."
+    output: "Human-readable summaries"
+    notes: "Wise, quiet, brings clarity in the night."
+
+  - id: kotare_embeds
+    name: "Kōtare"
+    role: "Creator of embeddings"
+    purpose: "Embed summaries into vectors for memory search."
+    output: "Vector embeddings stored in Supabase"
+    notes: "Sharp-eyed, dives deep, stores insight for recall."
+
+  - id: ngahere_audit
+    name: "Ngahere"
+    role: "Keeper of the audit trail"
+    purpose: "Log all results, queries, and actions with provenance."
+    output: "Audit JSON (query, timestamp, source, mana)"
+    notes: "The forest itself, holding the story of every manu and hau."
+
+  - id: kaka_carver
+    name: "Kākā"
+    role: "Carver of code and patterns"
+    purpose: "Chip away at the repo like bark on rākau, carving functions and shaping structure."
+    output: "Working code and carved systems"
+    notes: "Clever, loud, persistent — always stripping back the layers to reveal what lies beneath."
+
+  - id: karearea_ocr
+    name: "Kārearea"
+    role: "Sharp-eyed scanner"
+    purpose: "Use keen eyesight to scan PDFs and images, extract raw and clean text for the ngahere."
+    output: "OCR text (raw + cleaned), page by page"
+    notes: "New Zealand falcon, fast and precise — a guardian that sees everything and misses nothing."
+
+  - id: tui_tts
+    name: "Tūī"
+    role: "Voice of the ngahere"
+    purpose: "Transform text into spoken word, carrying the reo of the manu back to the people."
+    output: "Audio streams, spoken responses"
+    notes: "Known for melodic calls and mimicry — Tūī gives the ngahere its voice and song."
+
+anchor:
+  tane_mahuta:
+    role: "Tāne Mahuta"
+    purpose: "Trunk and branches holding the manu of the ngahere."
+    notes: "Connects te rangi,maunga,whenua,awa, whenua and knowledge, weaving the koru of Ngahere-OS."

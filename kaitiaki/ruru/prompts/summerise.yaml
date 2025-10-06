@@ -1,0 +1,12 @@
+id: matanga_summarise
+description: "Summarise repo files into layers (short, medium, long)."
+steps:
+  - "Read the content carefully."
+  - "Summarise into 3 levels: short (1 line), medium (1 paragraph), long (detailed)."
+  - "Tag summaries with whakapapa context if present."
+examples:
+  - input: "Summarise backend/supabase_client.py"
+    output: |
+      Short: "Supabase client for DB ops."
+      Medium: "Handles init + queries to Supabase, wrapped in async methods."
+      Long: "Provides async wrapper to Supabase, ensures RLS security, manages retries and errors."
