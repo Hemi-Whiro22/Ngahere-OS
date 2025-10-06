@@ -24,6 +24,7 @@ from routes.kotare_router import router as kotare_router
 from routes.karearea_router import router as karearea_router
 from routes.tui_router import router as tui_router
 from routes.kereru_router import router as kereru_router
+from routes.piwakawaka_router import router as piwakawaka_router
 
 app = FastAPI(title="Ngahere-OS - Living Forest of Kaitiaki", version="0.1.0")
 
@@ -35,6 +36,7 @@ app.include_router(kotare_router, prefix="/kotare", tags=["Kotare - Embeds"])
 app.include_router(karearea_router, prefix="/karearea", tags=["Karearea - OCR"])
 app.include_router(tui_router, prefix="/tui", tags=["Tui - Voice"])
 app.include_router(kereru_router, prefix="/kereru", tags=["Kererū - Gentle Audit"])
+app.include_router(piwakawaka_router, prefix="/piwakawaka", tags=["Pīwakawaka - Prompt Dancer"])
 
 @app.get("/")
 async def root():
@@ -43,7 +45,7 @@ async def root():
         "name": "Ngahere-OS",
         "description": "Living forest of kaitiaki guardians sustained by Tane Mahuta",
         "version": "0.1.0",
-        "kaitiaki": ["kea", "ruru", "kaka", "kotare", "karearea", "tui", "kereru"],
+        "kaitiaki": ["kea", "ruru", "kaka", "kotare", "karearea", "tui", "kereru", "piwakawaka"],
         "endpoints": {
             "kea": "/kea - Searcher (finds things in archives)",
             "ruru": "/ruru - Summariser (brings clarity)", 
@@ -51,7 +53,8 @@ async def root():
             "kotare": "/kotare - Embedder (stores knowledge)",
             "karearea": "/karearea - Scanner (sees everything)",
             "tui": "/tui - Voice (speaks the reo)",
-            "kereru": "/kereru - Auditor (gentle guardian watching over all)"
+            "kereru": "/kereru - Auditor (gentle guardian watching over all)",
+            "piwakawaka": "/piwakawaka - Prompt Dancer (zipping around chirping about prompts)"
         },
         "tane_mahuta": "Trunk and atua of the forest - holds together all manu",
         "rito": "Heart of the forest - holds mauri and sustains the ngahere",

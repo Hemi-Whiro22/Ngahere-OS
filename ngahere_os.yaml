@@ -51,6 +51,13 @@ roles:
     output: "Audit JSON (query, timestamp, source, mana)"
     notes: "Gentle guardian of the forest, watches all manu and spreads knowledge like seeds."
 
+  - id: piwakawaka
+    name: "Pīwakawaka"
+    role: "Prompt Dancer"
+    purpose: "Zip around chirping excessively about prompts, connecting and coordinating them like a master dancer."
+    output: "Coordinated prompts and prompt management"
+    notes: "Always zipping around chirping, connecting prompts and dancing between them."
+
 anchor:
   tane_mahuta:
     name: "Tāne Mahuta"

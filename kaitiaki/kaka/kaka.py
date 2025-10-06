@@ -11,7 +11,7 @@ from kaka.prompt_hub import prompt_hub
 class Kaka:
     def __init__(self):
         self.name = "Kaka"
-        self.role = "Carver & Prompt Coordinator"
+        self.role = "Carver"
         self.cloud_kaitiaki = CloudKaitiaki()
         # Get preferred model from Korito's heart
         self.preferred_model = get_korito_secret("KAKA_PREFERRED_MODEL") or "gpt-4"
@@ -94,8 +94,7 @@ Code:"""
             "role": self.role,
             "status": "ready",
             "capabilities": [
-                "carve", "code_generation", "model_switching", "cloud_fallback",
-                "prompt_carving", "prompt_coordination", "prompt_optimization"
+                "carve", "code_generation", "model_switching", "cloud_fallback"
             ],
             "preferred_model": self.preferred_model,
             "available_models": self.get_available_models(),
