@@ -94,11 +94,16 @@ roles:
     notes: "Reliable navigator managing database systems."
 
 anchor:
-  tane_mahuta:
-    name: "Tāne Mahuta"
-    role: "Trunk and atua of the forest"
-    purpose: "Holds together all manu and connects them through the branches of knowledge."
-    notes: "Connects te rangi, te whenua, te awa — atua of the ngahere."
+  tanemahuta:
+  name: "Tāne Mahuta"
+  role: "matua"
+  voice: "chatgpt"
+  model: "gpt-4o"
+  default: true
+  description: |
+    The orchestrator of Ngahere-OS. All requests pass through Tāne Mahuta unless routed directly to a manu. 
+    Root controller, guardian of the stream.
+  manifest: "mauri/matua.yaml"
 
   rito:
     name: "Rito Te Ngahere"
