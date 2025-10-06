@@ -58,6 +58,41 @@ roles:
     output: "Coordinated prompts and prompt management"
     notes: "Always zipping around chirping, connecting prompts and dancing between them."
 
+  - id: pukeko
+    name: "Pūkeko"
+    role: "Data Guardian"
+    purpose: "Protect data integrity, manage backups, and validate data with territorial protection."
+    output: "Protected data and backup systems"
+    notes: "Territorial protector of data integrity and backup systems."
+
+  - id: kahu
+    name: "Kahu"
+    role: "Security Sentinel"
+    purpose: "Monitor security, detect threats, and protect the ngahere with sharp-eyed vigilance."
+    output: "Security monitoring and threat detection"
+    notes: "Sharp-eyed sentinel protecting the ngahere from threats."
+
+  - id: tauhou
+    name: "Tauhou"
+    role: "Health Monitor"
+    purpose: "Monitor system health, performance metrics, and alert on issues with keen observation."
+    output: "Health monitoring and performance alerts"
+    notes: "Keen observer monitoring system health and performance."
+
+  - id: riroriro
+    name: "Riroriro"
+    role: "Communication Coordinator"
+    purpose: "Handle notifications, alerts, and communication between kaitiaki with powerful voice."
+    output: "Coordinated communication and notifications"
+    notes: "Powerful voice coordinating communication across the ngahere."
+
+  - id: korora
+    name: "Kororā"
+    role: "Database Keeper"
+    purpose: "Manage database connections, migrations, and schema updates with reliable navigation."
+    output: "Database management and migrations"
+    notes: "Reliable navigator managing database systems."
+
 anchor:
   tane_mahuta:
     name: "Tāne Mahuta"
