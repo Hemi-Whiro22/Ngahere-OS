@@ -9,6 +9,12 @@ import json
 from typing import Dict, List, Optional, Union
 from enum import Enum
 from abc import ABC, abstractmethod
+from pathlib import Path
+import sys
+
+# Add korito to path
+sys.path.append(str(Path(__file__).parent / "korito"))
+from loader import korito, get_korito_secret
 
 class AIProvider(Enum):
     """Supported AI providers"""
@@ -71,7 +77,7 @@ class OpenAIProvider(AIProviderInterface):
             raise Exception(f"OpenAI generation failed: {str(e)}")
     
     def is_available(self) -> bool:
-        return os.getenv("OPENAI_API_KEY") is not None
+        return get_korito_secret("OPENAI_API_KEY") is not None
 
 class OllamaProvider(AIProviderInterface):
     """Ollama local provider"""
@@ -102,7 +108,8 @@ class OllamaProvider(AIProviderInterface):
     
     def is_available(self) -> bool:
         try:
-            response = requests.get(f"{os.getenv('OLLAMA_URL', 'http://localhost:11434')}/api/tags", timeout=5)
+            ollama_url = get_korito_secret("OLLAMA_URL") or "http://localhost:11434"
+            response = requests.get(f"{ollama_url}/api/tags", timeout=5)
             return response.status_code == 200
         except:
             return False
@@ -123,26 +130,27 @@ class CloudKaitiaki:
         self.fallback_chain = [AIProvider.OPENAI, AIProvider.OLLAMA]
     
     def _load_model_configs(self) -> Dict[str, ModelConfig]:
-        """Load model configurations from environment"""
+        """Load model configurations from Korito's heart"""
         configs = {}
         
-        # OpenAI models
-        if os.getenv("OPENAI_API_KEY"):
+        # OpenAI models (from Korito)
+        openai_key = get_korito_secret("OPENAI_API_KEY")
+        if openai_key:
             configs["gpt-4"] = ModelConfig(
                 name="gpt-4",
                 provider=AIProvider.OPENAI,
                 endpoint="https://api.openai.com",
-                api_key=os.getenv("OPENAI_API_KEY")
+                api_key=openai_key
             )
             configs["gpt-3.5-turbo"] = ModelConfig(
                 name="gpt-3.5-turbo",
                 provider=AIProvider.OPENAI,
                 endpoint="https://api.openai.com",
-                api_key=os.getenv("OPENAI_API_KEY")
+                api_key=openai_key
             )
         
-        # Ollama models
-        ollama_url = os.getenv("OLLAMA_URL", "http://localhost:11434")
+        # Ollama models (from Korito)
+        ollama_url = get_korito_secret("OLLAMA_URL") or "http://localhost:11434"
         configs["llama3"] = ModelConfig(
             name="llama3",
             provider=AIProvider.OLLAMA,

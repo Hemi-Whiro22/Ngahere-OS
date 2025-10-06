@@ -45,16 +45,18 @@ graph TD
    cd Ngahere-OS
    ```
 
-2. **Set up environment**
+2. **Set up Korito (the heart of the forest)**
    ```bash
-   # Copy environment template
-   cp env.template .env
+   # Copy environment template to Korito's heart
+   cp kaitiaki/korito/env.template kaitiaki/korito/.env
    
-   # Edit .env with your API keys
+   # Edit Korito's .env with your API keys
    # SUPABASE_URL=your_supabase_url
    # SUPABASE_KEY=your_supabase_key
    # OPENAI_API_KEY=your_openai_key
    ```
+   
+   **⚠️ IMPORTANT**: Without Korito's .env file, the ngahere cannot function!
 
 3. **Install dependencies**
    ```bash
@@ -74,9 +76,10 @@ The API will be available at `http://localhost:8000`
 
 ## 📚 API Endpoints
 
+- **Korito** (`/korito`) - Heart of the forest (environment status)
 - **Kea** (`/kea`) - Search and testing utilities
 - **Ruru** (`/ruru`) - Summarization services  
-- **Kākā** (`/kaka`) - Code generation and carving
+- **Kākā** (`/kaka`) - Code generation and carving with Cloud Kaitiaki
 - **Kōtare** (`/kotare`) - Embedding and vector storage
 - **Kārearea** (`/karearea`) - OCR and image scanning
 - **Tūī** (`/tui`) - Text-to-speech and voice

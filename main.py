@@ -1,8 +1,20 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
 import sys
 from pathlib import Path
+
+# Check for Korito (the heart) before starting
+sys.path.append(str(Path(__file__).parent / "kaitiaki" / "korito"))
+from loader import validate_ngahere_heart, korito
+
+# Validate that Korito is present and functioning
+if not validate_ngahere_heart():
+    print("🌲 NGAHERE FAILURE: Korito (the heart) is missing or invalid!")
+    print("Please ensure kaitiaki/korito/.env exists with proper configuration.")
+    sys.exit(1)
+
+print("🌲 Korito (the heart) is present - the ngahere can function!")
 
 # Import kaitiaki routers
 from routes.kea_router import router as kea_router
@@ -42,8 +54,14 @@ async def root():
             "ngahere": "/ngahere - Auditor (records everything)"
         },
         "tane_mahuta": "Trunk and atua of the forest - holds together all manu",
-        "rito": "Heart of the forest - holds mauri and sustains the ngahere"
+        "rito": "Heart of the forest - holds mauri and sustains the ngahere",
+        "korito_status": korito.get_status()
     }
+
+@app.get("/korito")
+async def korito_status():
+    """Korito - The heart of the forest status"""
+    return korito.get_status()
 
 if __name__ == "__main__":
     import uvicorn

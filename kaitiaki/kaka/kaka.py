@@ -2,15 +2,17 @@ import sys
 import os
 from pathlib import Path
 
-# Add parent directory to path to import cloud_kaitiaki
+# Add parent directory to path to import cloud_kaitiaki and korito
 sys.path.append(str(Path(__file__).parent.parent))
 from cloud_kaitiaki import CloudKaitiaki, AIProvider
+from korito.loader import get_korito_secret
 
 class Kaka:
     def __init__(self):
         self.name = "Kaka"
         self.cloud_kaitiaki = CloudKaitiaki()
-        self.preferred_model = os.getenv("KAKA_PREFERRED_MODEL", "gpt-4")  # Default to GPT-4, fallback to Ollama
+        # Get preferred model from Korito's heart
+        self.preferred_model = get_korito_secret("KAKA_PREFERRED_MODEL") or "gpt-4"
 
     def carve(self, target: str, context: str = "", model: str = None) -> str:
         """Kākā carves code using Cloud Kaitiaki with automatic fallback"""
