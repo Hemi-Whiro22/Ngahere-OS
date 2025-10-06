@@ -6,7 +6,7 @@ from pathlib import Path
 
 # Check for Korito (the heart) before starting
 sys.path.append(str(Path(__file__).parent / "kaitiaki" / "korito"))
-from loader import validate_ngahere_heart, korito
+from loader import validate_ngahere_heart
 
 # Validate that Korito is present and functioning
 if not validate_ngahere_heart():
@@ -25,6 +25,7 @@ from routes.karearea_router import router as karearea_router
 from routes.tui_router import router as tui_router
 from routes.kereru_router import router as kereru_router
 from routes.piwakawaka_router import router as piwakawaka_router
+from routes.korito_router import router as korito_router
 
 app = FastAPI(title="Ngahere-OS - Living Forest of Kaitiaki", version="0.1.0")
 
@@ -37,6 +38,7 @@ app.include_router(karearea_router, prefix="/karearea", tags=["Karearea - OCR"])
 app.include_router(tui_router, prefix="/tui", tags=["Tui - Voice"])
 app.include_router(kereru_router, prefix="/kereru", tags=["Kererū - Gentle Audit"])
 app.include_router(piwakawaka_router, prefix="/piwakawaka", tags=["Pīwakawaka - Prompt Dancer"])
+app.include_router(korito_router, prefix="/korito", tags=["Korito - Heart of the Forest"])
 
 @app.get("/")
 async def root():
@@ -45,7 +47,7 @@ async def root():
         "name": "Ngahere-OS",
         "description": "Living forest of kaitiaki guardians sustained by Tane Mahuta",
         "version": "0.1.0",
-        "kaitiaki": ["kea", "ruru", "kaka", "kotare", "karearea", "tui", "kereru", "piwakawaka"],
+        "kaitiaki": ["kea", "ruru", "kaka", "kotare", "karearea", "tui", "kereru", "piwakawaka", "korito"],
         "endpoints": {
             "kea": "/kea - Searcher (finds things in archives)",
             "ruru": "/ruru - Summariser (brings clarity)", 
@@ -54,17 +56,13 @@ async def root():
             "karearea": "/karearea - Scanner (sees everything)",
             "tui": "/tui - Voice (speaks the reo)",
             "kereru": "/kereru - Auditor (gentle guardian watching over all)",
-            "piwakawaka": "/piwakawaka - Prompt Dancer (zipping around chirping about prompts)"
+            "piwakawaka": "/piwakawaka - Prompt Dancer (zipping around chirping about prompts)",
+            "korito": "/korito - Heart of the forest (environment and secrets)"
         },
         "tane_mahuta": "Trunk and atua of the forest - holds together all manu",
-        "rito": "Heart of the forest - holds mauri and sustains the ngahere",
-        "korito_status": korito.get_status()
+        "rito": "Heart of the forest - holds mauri and sustains the ngahere"
     }
 
-@app.get("/korito")
-async def korito_status():
-    """Korito - The heart of the forest status"""
-    return korito.get_status()
 
 if __name__ == "__main__":
     import uvicorn

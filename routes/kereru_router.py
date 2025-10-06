@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from datetime import datetime
+from typing import Optional
 import json
 
 router = APIRouter()
@@ -52,7 +53,7 @@ class AuditLog(BaseModel):
     kaitiaki: str
     query: str
     result: str
-    timestamp: str = None
+    timestamp: Optional[str] = None
 
 @router.get("/")
 async def kereru_status():
