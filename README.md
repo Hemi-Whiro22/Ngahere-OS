@@ -12,7 +12,7 @@ Each kaitiaki acts as a utility/service in the backend, wrapping functions with 
 - **🦅 Kea**: Curious trickster — testing, debugging, stress checking, searching
 - **🦜 Kākā**: Noisy carver — carving code and patterns into shape
 - **🎶 Tūī**: Voice of the ngahere — text-to-speech, translation, reo flows
-- **🌲 Ngahere**: The forest itself — audit trail, recording every manu's flight
+- **🕊️ Kererū**: Gentle auditor — watchful guardian recording every manu's flight
 
 ## 🏗️ Architecture
 
@@ -25,7 +25,7 @@ graph TD
     TaneMahuta --> Kaka["🦜 Kākā — Carver"]
     TaneMahuta --> Karearea["🦅 Kārearea — OCR"]
     TaneMahuta --> Tui["🎶 Tūī — Voice"]
-    TaneMahuta --> Ngahere["🌲 Ngahere — Audit"]
+    TaneMahuta --> Kereru["🕊️ Kererū — Audit"]
 ```
 
 ## 🚀 Quick Start
@@ -83,7 +83,7 @@ The API will be available at `http://localhost:8000`
 - **Kōtare** (`/kotare`) - Embedding and vector storage
 - **Kārearea** (`/karearea`) - OCR and image scanning
 - **Tūī** (`/tui`) - Text-to-speech and voice
-- **Ngahere** (`/ngahere`) - Audit logging and provenance
+- **Kererū** (`/kereru`) - Gentle audit logging and provenance
 
 ## 🛠️ Development Status
 

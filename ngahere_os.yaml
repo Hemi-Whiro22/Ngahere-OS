@@ -44,12 +44,12 @@ roles:
     output: "Audio streams, spoken responses"
     notes: "Melodic calls and mimicry — Tūī gives the ngahere its song."
 
-  - id: ngahere
-    name: "Ngahere"
+  - id: kereru
+    name: "Kererū"
     role: "Auditor"
-    purpose: "Log all results, queries, and actions with provenance."
+    purpose: "Watch over the ngahere with gentle eyes, logging all results, queries, and actions with provenance."
     output: "Audit JSON (query, timestamp, source, mana)"
-    notes: "The forest itself, holding the story of every manu and hau."
+    notes: "Gentle guardian of the forest, watches all manu and spreads knowledge like seeds."
 
 anchor:
   tane_mahuta:

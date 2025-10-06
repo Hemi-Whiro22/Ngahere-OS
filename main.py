@@ -43,7 +43,7 @@ async def root():
         "name": "Ngahere-OS",
         "description": "Living forest of kaitiaki guardians sustained by Tane Mahuta",
         "version": "0.1.0",
-        "kaitiaki": ["kea", "ruru", "kaka", "kotare", "karearea", "tui", "ngahere"],
+        "kaitiaki": ["kea", "ruru", "kaka", "kotare", "karearea", "tui", "kereru"],
         "endpoints": {
             "kea": "/kea - Searcher (finds things in archives)",
             "ruru": "/ruru - Summariser (brings clarity)", 
@@ -51,7 +51,7 @@ async def root():
             "kotare": "/kotare - Embedder (stores knowledge)",
             "karearea": "/karearea - Scanner (sees everything)",
             "tui": "/tui - Voice (speaks the reo)",
-            "ngahere": "/ngahere - Auditor (records everything)"
+            "kereru": "/kereru - Auditor (gentle guardian watching over all)"
         },
         "tane_mahuta": "Trunk and atua of the forest - holds together all manu",
         "rito": "Heart of the forest - holds mauri and sustains the ngahere",
