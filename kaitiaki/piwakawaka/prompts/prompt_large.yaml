@@ -1,0 +1,10 @@
+name: repo_carve
+input: |
+  - Whole repository context
+  - Scan all memory.yaml files
+  - Identify gaps, dependencies, recommendations
+output: |
+  - Updated code + prompts
+  - Updated memory.yaml for each folder
+  - Vector embedding task for Karearea
+  - Audit log entry for changes

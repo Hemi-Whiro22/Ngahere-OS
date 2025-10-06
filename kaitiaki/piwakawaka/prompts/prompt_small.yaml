@@ -1,0 +1,6 @@
+name: quick_task
+input: |
+  - One file or script
+  - One-shot action
+output: |
+  - Immediate response, no memory update

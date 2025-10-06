@@ -1,0 +1,12 @@
+name: search_repo
+description: Search Ngahere memory and audit logs
+input: |
+  - Search phrase
+output: |
+  - Relevant YAML memory summaries
+  - Vector-ranked results
+  - Audit log entries if available
+steps:
+  - Use Supabase vector search on memory_index.
+  - Check audit_logs for related actions or edits.
+  - Return summaries + recommendations for next carve.

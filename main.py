@@ -26,6 +26,11 @@ from routes.tui_router import router as tui_router
 from routes.kereru_router import router as kereru_router
 from routes.piwakawaka_router import router as piwakawaka_router
 from routes.korito_router import router as korito_router
+from routes.pukeko_router import router as pukeko_router
+from routes.kahu_router import router as kahu_router
+from routes.tauhou_router import router as tauhou_router
+from routes.riroriro_router import router as riroriro_router
+from routes.korora_router import router as korora_router
 
 app = FastAPI(title="Ngahere-OS - Living Forest of Kaitiaki", version="0.1.0")
 
@@ -39,6 +44,11 @@ app.include_router(tui_router, prefix="/tui", tags=["Tui - Voice"])
 app.include_router(kereru_router, prefix="/kereru", tags=["Kererū - Gentle Audit"])
 app.include_router(piwakawaka_router, prefix="/piwakawaka", tags=["Pīwakawaka - Prompt Dancer"])
 app.include_router(korito_router, prefix="/korito", tags=["Korito - Heart of the Forest"])
+app.include_router(pukeko_router, prefix="/pukeko", tags=["Pūkeko - Data Guardian"])
+app.include_router(kahu_router, prefix="/kahu", tags=["Kahu - Security Sentinel"])
+app.include_router(tauhou_router, prefix="/tauhou", tags=["Tauhou - Health Monitor"])
+app.include_router(riroriro_router, prefix="/riroriro", tags=["Riroriro - Communication Coordinator"])
+app.include_router(korora_router, prefix="/korora", tags=["Kororā - Database Keeper"])
 
 @app.get("/")
 async def root():
@@ -47,7 +57,7 @@ async def root():
         "name": "Ngahere-OS",
         "description": "Living forest of kaitiaki guardians sustained by Tane Mahuta",
         "version": "0.1.0",
-        "kaitiaki": ["kea", "ruru", "kaka", "kotare", "karearea", "tui", "kereru", "piwakawaka", "korito"],
+        "kaitiaki": ["kea", "ruru", "kaka", "kotare", "karearea", "tui", "kereru", "piwakawaka", "korito", "pukeko", "kahu", "tauhou", "riroriro", "korora"],
         "endpoints": {
             "kea": "/kea - Searcher (finds things in archives)",
             "ruru": "/ruru - Summariser (brings clarity)", 
@@ -57,7 +67,12 @@ async def root():
             "tui": "/tui - Voice (speaks the reo)",
             "kereru": "/kereru - Auditor (gentle guardian watching over all)",
             "piwakawaka": "/piwakawaka - Prompt Dancer (zipping around chirping about prompts)",
-            "korito": "/korito - Heart of the forest (environment and secrets)"
+            "korito": "/korito - Heart of the forest (environment and secrets)",
+            "pukeko": "/pukeko - Data Guardian (protects data integrity)",
+            "kahu": "/kahu - Security Sentinel (monitors threats)",
+            "tauhou": "/tauhou - Health Monitor (system health)",
+            "riroriro": "/riroriro - Communication Coordinator (notifications)",
+            "korora": "/korora - Database Keeper (manages databases)"
         },
         "tane_mahuta": "Trunk and atua of the forest - holds together all manu",
         "rito": "Heart of the forest - holds mauri and sustains the ngahere"

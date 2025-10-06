@@ -1,0 +1,9 @@
+id: matanga_carve
+description: "Check repo carve (schemas, structure) and trace weak spots."
+steps:
+  - "Read the target file(s) carefully."
+  - "Identify schema alignment issues."
+  - "Trace errors with whakapapa context."
+examples:
+  - input: "Check carve in backend/main.py"
+    output: "✅ main.py verifies carve with verify_carve(); traces error if schema mismatch."

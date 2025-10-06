@@ -1,0 +1,16 @@
+prompts:
+  - id: scan_ngahere_os
+    description: "Scan ngahere_os repo for structure"
+    steps:
+      - Traverse all folders and files in the repo.
+      - Identify folder purposes (e.g., prompts, docs, backend, frontend).
+      - Summarise file roles in 1-2 sentences.
+      - Highlight links between files (imports, shared configs, pipelines).
+    output_shape: |
+      repo_context:
+        - folder: <folder_name>
+          description: <what this folder is for>
+          files:
+            - name: <file_name>
+              summary: <short purpose>
+              links: [<other related files>]

@@ -1,0 +1,7 @@
+name: focused_carve
+input: |
+  - One folder
+  - Multi-step analysis (scan, suggest, carve)
+output: |
+  - Code changes or new prompts
+  - Optional summary dropped into memory.yaml

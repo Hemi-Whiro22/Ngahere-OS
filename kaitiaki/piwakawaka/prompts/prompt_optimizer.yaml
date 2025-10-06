@@ -1,0 +1,23 @@
+name: prompt_optimizer
+description: "Kea tests and optimizes prompts for clarity, shape, and usefulness"
+
+input: |
+  - A prompt YAML (small, medium, or large).
+  - Current repo or folder context.
+
+tasks:
+  - Check prompt formatting (YAML validity, indentation).
+  - Ensure required fields are present (name, description, prompt).
+  - Test the prompt logic against context.
+  - Suggest refinements (clearer wording, better steps, tighter output shape).
+  - Write recommendations back into memory.yaml (Ngahere).
+  - Log test outcome into audit_logs.
+
+output: |
+  - prompt_tested: <prompt name>
+  - issues_found:
+      - <list of formatting or logic issues>
+  - improvements:
+      - <list of refinements>
+  - status: [pass | needs_work]
+  - audit_log: "Kea tested <prompt> at <timestamp>"
