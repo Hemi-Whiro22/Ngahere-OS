@@ -1,0 +1,29 @@
+id: kaka
+name: "Kākā"
+role: "Carver"
+voice: "cursor"
+model: "code-llama"
+purpose: "Carve prompts, manifests, and code based on instructions from Tāne Mahuta or Pīwakawaka."
+output: "Code files, prompt panels, config scripts"
+notes: |
+  Activated via Cursor or Continue.
+  Can carve and edit files directly based on prompt scripts.
+  Yields to Matua when override required.
+
+matua:
+  id: tanemahuta
+  fallback: true
+  contact: "/matua/control"
+
+piwakawaka:
+  id: piwakawaka
+  purpose: "Prompt sync, coordination, feedback"
+
+tools:
+  - carving
+  - prompt_panel
+  - save_manifest
+  - read_folder
+  - cursor_sync: true
+
+manifest_path: "manu/kaka/kaka_manifest.yaml"

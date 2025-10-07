@@ -6,7 +6,8 @@ from pathlib import Path
 
 # Check for Korito (the heart) before starting
 sys.path.append(str(Path(__file__).parent / "kaitiaki" / "korito"))
-from loader import validate_ngahere_heart
+from korito.loader import validate_ngahere_heart
+
 
 # Validate that Korito is present and functioning
 if not validate_ngahere_heart():

@@ -109,3 +109,11 @@ async def optimize_prompt(data: PromptOptimizeInput):
         "prompt_name": data.prompt_name,
         "result": result
     }
+
+
+router = APIRouter(prefix="/kaka")
+
+@router.post("/carve_korito")
+async def carve_korito():
+    # Logic goes here
+    return {"message": "Kākā carved korito.py with fresh env router 🍃"}
