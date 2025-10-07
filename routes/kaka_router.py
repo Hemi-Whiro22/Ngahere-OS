@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.kaka.kaka import Kaka
+from manu.kaka.kaka import Kaka
 
 router = APIRouter()
 kaka = Kaka()

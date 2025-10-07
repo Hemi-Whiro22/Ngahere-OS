@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.karearea.karearea import Karearea
+from manu.karearea.karearea import Karearea
 
 router = APIRouter()
 karearea = Karearea()

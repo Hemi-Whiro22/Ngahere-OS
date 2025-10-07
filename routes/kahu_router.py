@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.kahu.kahu import Kahu
+from manu.kahu.kahu import Kahu
 
 router = APIRouter()
 kahu = Kahu()

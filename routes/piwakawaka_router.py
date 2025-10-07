@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.piwakawaka.piwakawaka import Piwakawaka
+from manu.piwakawaka.piwakawaka import Piwakawaka
 
 router = APIRouter()
 piwakawaka = Piwakawaka()

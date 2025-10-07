@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.tui.tui import Tui
+from manu.tui.tui import Tui
 
 router = APIRouter()
 tui = Tui()

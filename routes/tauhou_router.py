@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.tauhou.tauhou import Tauhou
+from manu.tauhou.tauhou import Tauhou
 
 router = APIRouter()
 tauhou = Tauhou()

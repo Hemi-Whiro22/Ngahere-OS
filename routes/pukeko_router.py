@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.pukeko.pukeko import Pukeko
+from manu.pukeko.pukeko import Pukeko
 
 router = APIRouter()
 pukeko = Pukeko()

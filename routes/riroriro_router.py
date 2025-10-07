@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.riroriro.riroriro import Riroriro
+from manu.riroriro.riroriro import Riroriro
 
 router = APIRouter()
 riroriro = Riroriro()

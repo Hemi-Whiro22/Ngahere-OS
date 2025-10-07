@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.kea.kea import Kea
+from manu.kea.kea import Kea
 
 router = APIRouter()
 kea = Kea()

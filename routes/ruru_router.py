@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.ruru.ruru import Ruru
+from manu.ruru.ruru import Ruru
 
 router = APIRouter()
 ruru = Ruru()

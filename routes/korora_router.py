@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from kaitiaki.korora.korora import Korora
+from manu.korora.korora import Korora
 
 router = APIRouter()
 korora = Korora()
