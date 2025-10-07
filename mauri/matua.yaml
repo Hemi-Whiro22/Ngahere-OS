@@ -1,0 +1,12 @@
+
+# 4. mauri/matua.yaml
+matua:
+  id: tanemahuta
+  name: "Tāne Mahuta"
+  role: "matua"
+  voice: "chatgpt"
+  model: "gpt-4o"
+  default: true
+  manifest: "mauri/matua.yaml"
+  description: |
+    Root orchestrator. All manu fall back to Tāne Mahuta unless directed.

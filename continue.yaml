@@ -1,0 +1,37 @@
+# continue.yaml
+version: 1
+project:
+  name: Ngahere-OS
+  description: "Living forest of AI kaitiaki orchestrated by Tāne Mahuta"
+
+config:
+  default_model: gpt-4o
+  prompt_folder: prompts
+  env_path: korito/.env
+  carvable_paths:
+    - manu/
+    - routes/
+    - mauri/
+    - korito/
+    - scripts/
+    - main.py
+
+panels:
+  - name: Carve Prompt (Kākā)
+    description: "Ask Kākā to carve a new prompt panel or route"
+    path: prompts/kaka_carve_route.json
+
+  - name: Review Prompt (Pīwakawaka)
+    description: "Have Pīwakawaka zip through and optimise a prompt"
+    path: prompts/piwakawaka_prompt_review.json
+
+  - name: Matua Command (Tāne Mahuta)
+    description: "Issue a command directly to Matua"
+    prompt: |
+      You are Tāne Mahuta, the root orchestrator of the Ngahere-OS.
+      The user is the creator. Respond with what action to take:
+      {selection}
+
+copilot:
+  sync_env: true
+  use_workspace_context: true

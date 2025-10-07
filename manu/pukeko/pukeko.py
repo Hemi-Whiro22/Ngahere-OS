@@ -22,8 +22,9 @@ class Pukeko:
         self.backup_status = {}
         self.validation_rules = {}
     
-    def protect_data(self, data: dict, validation_rules: dict = None) -> str:
+    def protect_data(self, data: dict, validation_rules: Optional[dict] = None) -> str:
         """Pūkeko protects data with territorial vigilance"""
+        validation_rules = validation_rules or {}
         timestamp = datetime.utcnow().isoformat()
         
         # Validate data integrity
@@ -70,10 +71,11 @@ class Pukeko:
             "issues": issues
         }
     
-    def create_backup(self, data: dict, backup_name: str = None) -> str:
+    def create_backup(self, data: dict, backup_name: Optional[str] = None) -> str:
         """Pūkeko creates territorial backup of data"""
+        backup_name = backup_name or f"backup_{datetime.utcnow().isoformat().replace(':', '-')}"
+
         timestamp = datetime.utcnow().isoformat()
-        backup_name = backup_name or f"backup_{timestamp.replace(':', '-')}"
         
         try:
             # Create backup directory

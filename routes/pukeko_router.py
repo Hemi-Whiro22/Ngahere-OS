@@ -1,17 +1,18 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from manu.pukeko.pukeko import Pukeko
+from typing import Optional
 
 router = APIRouter()
 pukeko = Pukeko()
 
 class DataProtectionInput(BaseModel):
     data: dict
-    validation_rules: dict = None
+    validation_rules: Optional[dict] = None
 
 class BackupInput(BaseModel):
     data: dict
-    backup_name: str = None
+    backup_name: Optional[str] = None
 
 class RestoreInput(BaseModel):
     backup_name: str

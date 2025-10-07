@@ -1,0 +1,18 @@
+ 8. .cursor/config.json (Copilot/Continue panel)
+{
+  "panels": [
+    {
+      "name": "Carve Prompt Panel",
+      "description": "Ask Kākā to carve a new prompt.",
+      "prompt": "// Kākā, carve me a panel to..."
+    },
+    {
+      "name": "Review Prompt (Pīwakawaka)",
+      "description": "Have Pīwakawaka zip through and optimise.",
+      "prompt": "// Pīwakawaka, review this prompt and embed fallback."
+    }
+  ]
+}
+
+# 🔒 Now syncing Supabase upgrade + embedding vector fix (3072) and loading the PDF
+# Will wire that into `mauri/pdf_taonga.yaml` and `korito/vector_config.py` next

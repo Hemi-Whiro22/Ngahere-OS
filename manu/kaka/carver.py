@@ -1,15 +1,12 @@
-# manu/kaka/carver.py
-
+# 5. manu/kaka/carver.py
 def carve_prompt_panel(name: str):
+    import json, os
+    os.makedirs("prompts", exist_ok=True)
     filename = f"prompts/{name.lower().replace(' ', '_')}.json"
-    prompt_data = {
-        "name": name,
-        "description": "A prompt carved by Kākā",
-        "prompt": f"// {name} — carved via Tāne Mahuta\n"
-    }
-
     with open(filename, "w") as f:
-        import json
-        json.dump(prompt_data, f, indent=2)
-
-    return f"✅ Kākā carved prompt panel: {filename}"
+        json.dump({
+            "name": name,
+            "description": f"Prompt carved by Kākā",
+            "prompt": f"// {name} — carved via Tāne Mahuta\n"
+        }, f, indent=2)
+    return f"✅ Kākā carved {filename}"
