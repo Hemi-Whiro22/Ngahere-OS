@@ -1,4 +1,4 @@
- 8. .cursor/config.json (Copilot/Continue panel)
+
 {
   "panels": [
     {
@@ -14,5 +14,4 @@
   ]
 }
 
-# 🔒 Now syncing Supabase upgrade + embedding vector fix (3072) and loading the PDF
-# Will wire that into `mauri/pdf_taonga.yaml` and `korito/vector_config.py` next
+
